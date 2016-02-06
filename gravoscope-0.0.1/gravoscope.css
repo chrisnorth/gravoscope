@@ -338,18 +338,12 @@ p.social img {
     opacity: 0.6;
 }
 
-/*#kiosk-overlay{
-    height: 100px;
-    width:12em;
-    position: absolute;
-    bottom: 4em;
-    left: -11em;
-    z-index: 1;
-    padding:0.5em;
-        opacity: 0.;
-}*/
+/***************************
+OPTIONS MENU BOX
+***************************/
 
-#kiosk .minmax{
+/* Min/max arrow */
+#kiosk .minmax, #overlay .minmax{
     position:absolute;
     top: 0.5em;
     right: 0.5em;
@@ -362,14 +356,15 @@ p.social img {
     /*display:none; /*Hidden*/    */
 }
 
-#kiosk .minmax.max{
+#kiosk .minmax.max, #overlay .minmax.max{
     background: #333 no-repeat url('show-hide-inv.png') -0.1em -0.1em / 2em 2em;
 }
 
-#kiosk .minmax.min{
+#kiosk .minmax.min, #overlay .minmax.min{
     background: #ccc no-repeat url('show-hide.png') 0px 0px / 2em 2em;
 }
 
+/*Menu box and text */
 #kiosk #menu-title{
     position: absolute;
     font-weight: bold;
@@ -389,13 +384,9 @@ p.social img {
     margin-left:0.5em
 }
 
-/*#kiosk #options .column{
-    width: 7em;
-}*/
 #kiosk #options .column{
     width: 9em;
 }
-
 
 #kiosk #options .option{
     background-color: #ccc;
@@ -428,21 +419,21 @@ p.social img {
     font-size:1em;
 }
 
-
-#kiosk #options #on-off{
+/* on/off indicators*/
+#kiosk #options .on-off, #overlay #options .on-off{
     width:0.5em;
     height:1.8em;
     float:left;
 }
-#kiosk #options #on-off.off{
+.on-off.off{
     background-color: #f00;
 }
 
-#kiosk #options #on-off.on{
+.on-off.on{
     background-color: #0f0;
 }
 
-#kiosk #options #on-off.null{
+.on-off.null{
     background-color: #ccc;
 }
 
@@ -455,6 +446,7 @@ p.social img {
     /*line-height:100%;*/
 }
 
+/*Arrows*/
 #kiosk .option .arrow-right {
 	width: 0;
 	height: 0;
@@ -494,6 +486,10 @@ h4{
     font-size: 1em;
 }
 
+/***************************
+OVERLAY MENU BOX
+***************************/
+
 #overlay{
     height: 8em;
     width:40em;
@@ -516,6 +512,8 @@ h4{
     opacity: 0.6;
 }
 
+/*min/max arrows*/
+
 #overlay .minmax{
     position:absolute;
     top: 0.5em;
@@ -526,7 +524,6 @@ h4{
     -moz-border-radius: 0.5em;
     -webkit-border-radius: 0.5em;
     cursor: pointer;
-    /*display:none; /*Hidden*/    */
 }
 
 #overlay .minmax.max{
@@ -537,14 +534,7 @@ h4{
     background: #ccc no-repeat url('show-hide.png') 0px 0px / 2em 2em;
 }
 
-/*#overlay .minmax.max-sm{
-    background: #333 no-repeat url('show-hide-inv_sm.png') -1px -42px / 2em 4em;
-}
-
-#overlay .minmax.min-sm{
-    background: #ccc no-repeat url('show-hide_sm.png') 0px 0px / 2em 4em;
-}*/
-
+/*Menu box and titles */
 #overlay #menu-title{
     position: absolute;
     font-weight: bold;
@@ -564,6 +554,7 @@ h4{
     position:relative;
 }
 
+/*Buttons*/
 #overlay #options .column{
     width: 9em;
     position:absolute;
@@ -582,7 +573,7 @@ h4{
     overflow: hidden;
     cursor: pointer;
     margin-bottom: 0.5em;
-    width:9em;
+    width:7em;
     float:left;
 }
 
@@ -592,7 +583,7 @@ h4{
 
 #overlay #options .label{
     font-size: 90%;
-    width:7.7em;
+    width:7em;
     float:left;
 }
 
@@ -601,7 +592,8 @@ h4{
     width:1.2em;
     height:1.2em;
     z-index:95;
-    background: #ccc no-repeat url('info.png') 0px 0px / 1.2em 1.2em;
+    background: no-repeat url('info.png') 0px 0px / 1.2em 1.2em;
+    margin-left: 0.5em;
     margin-top:0.3em;
 }
 
@@ -610,21 +602,16 @@ h4{
     text-decoration:none;
 }
 
-#overlay #options #on-off{
-    width:0.5em;
-    height:1.8em;
+/*opacity selector*/
+#overlay #options #opacity{
+    width:9em;
+}
+#overlay #options #opacity .label{
+    font-size: 90%;
+    width:8em;
     float:left;
-}
-#overlay #options #on-off.off{
-    background-color: #f00;
-}
-
-#overlay #options #on-off.on{
-    background-color: #0f0;
-}
-
-#overlay #options #on-off.null{
-    background-color: #ccc;
+    text-align:center;
+    cursor:pointer;
 }
 
 #overlay #options #opcol .op-pm{
@@ -645,6 +632,9 @@ h4{
     color:#fff;
 }
 
+/***************************
+POP-UP INFO BOXES
+***************************/
 .overlay_info{
     z-index:1000;
     position:absolute;
@@ -667,6 +657,20 @@ h4{
     margin-top:0px;
 }
 
+/*Fix fact that super/subscripts change line height*/
+.overlay_info ul{
+    line-height:150%;
+}
+.overlay_info ul sup{
+    position:relative;
+    vertical-align:top;
+    top:-0.5em;
+}
+.overlay_info ul sub{
+    position:relative;
+    vertical-align:bottom;
+    bottom:-0.5em;
+}
 .chromo_zoom{
 /*font-size: 25px;*/
 }

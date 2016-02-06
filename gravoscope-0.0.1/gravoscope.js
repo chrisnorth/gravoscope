@@ -84,10 +84,10 @@ function setupGravoscope(){
 	chromo.toggleAnnotationsByName('c');
 	chromo.checkTiles(true)
 	//console.log('toggled labels');
-	if($('#kiosk #options #option-const #on-off').hasClass("off")){
-	    $('#kiosk #options #option-const #on-off').removeClass("off").addClass("on");
-        }else if($('#kiosk #options #option-const #on-off').hasClass("on")){
-	    $('#kiosk #options #option-const #on-off').removeClass("on").addClass("off");};
+	if($('#kiosk #options #option-const .on-off').hasClass("off")){
+	    $('#kiosk #options #option-const .on-off').removeClass("off").addClass("on");
+    }else if($('#kiosk #options #option-const .on-off').hasClass("on")){
+	    $('#kiosk #options #option-const .on-off').removeClass("on").addClass("off");};
     },'toggle constellation labels')
 
     chromo.reregisterKey('l',function(){
@@ -95,10 +95,10 @@ function setupGravoscope(){
 	chromo.toggleAnnotationsByName('l');
 	chromo.checkTiles(true)
 	//console.log('toggled grav');
-	if($('#kiosk #options #option-labels #on-off').hasClass("off")){
-	    $('#kiosk #options #option-labels #on-off').removeClass("off").addClass("on");
-        }else if($('#kiosk #options #option-labels #on-off').hasClass("on")){
-	    $('#kiosk #options #option-labels #on-off').removeClass("on").addClass("off");};
+	if($('#kiosk #options #option-labels .on-off').hasClass("off")){
+	    $('#kiosk #options #option-labels .on-off').removeClass("off").addClass("on");
+    }else if($('#kiosk #options #option-labels .on-off').hasClass("on")){
+	    $('#kiosk #options #option-labels .on-off').removeClass("on").addClass("off");};
     },'toggle grav labels')
 
 
@@ -180,7 +180,7 @@ function setupGravoscope(){
 
 	chromo.ovloff=-ovw-2;
 	chromo.ovlmx=-1;
-	chromo.ovlmn=-31.5;
+	chromo.ovlmn=-13;
 	$(chromo.body+' #overlay').css({left:chromo.ovloff+'em'});
 
 	//add overlay buttons
@@ -198,7 +198,7 @@ function setupGravoscope(){
 		chromo.annotations[i].divid=divid;
 		chromo.annotations[i].infoid=infoid;
 		$(chromo.body+' #overlay #'+colid).append('<div id="'+divid+'" class="'+divclass+'">');
-		$(chromo.body+' #overlay #'+colid+' #'+divid).append('<div id="on-off" class="off"></div>');
+		$(chromo.body+' #overlay #'+colid+' #'+divid).append('<div class="on-off off"></div>');
 		$(chromo.body+' #overlay #'+colid+' #'+divid).append('<div class="label">'+chromo.annotations[i].title+'</div>');
 		$(chromo.body+' #overlay #'+colid+' #'+divid+' .label').disableTextSelect();
 		//sort out what happens on clicking the button
@@ -209,18 +209,18 @@ function setupGravoscope(){
 		    for (var j=0 ; j < chromo.annotations.length ; j++){
 			if (chromo.annotations[j].divid == srchid){
 			    chromo.simulateKeyPress(chromo.annotations[j].key);
-			    if ($(chromo.body+' #overlay #'+srchid+' #on-off').hasClass("off")){
-				$(chromo.body+' #overlay #'+srchid+ ' #on-off').removeClass("off").addClass("on");
+			    if ($(chromo.body+' #overlay #'+srchid+' .on-off').hasClass("off")){
+				$(chromo.body+' #overlay #'+srchid+ ' .on-off').removeClass("off").addClass("on");
 			    }else{
-				$(chromo.body+' #overlay #'+srchid+' #on-off').removeClass("on").addClass("off");
+				$(chromo.body+' #overlay #'+srchid+' .on-off').removeClass("on").addClass("off");
 			    };
 			};
 		    };
 		});
 
 		//add info button
-		$(chromo.body+' #overlay #'+colid+' #'+divid).append('<div class="info" id="'+infoid+'"></div>');
-		$(chromo.body+' #overlay #'+colid+" #"+divid+" #"+infoid).click(function(){
+		$(chromo.body+' #overlay #'+colid).append('<div class="info" id="'+infoid+'">');
+		$(chromo.body+' #overlay #'+colid+" #"+infoid).click(function(){
 		    var srchid='more'+this.id;
 		    //console.log('toggling',srchid,$(chromo.body+' #'+srchid).css('display'));
 		    if ($(chromo.body+' #'+srchid).css('display')=='none'){
@@ -258,7 +258,7 @@ function setupGravoscope(){
 
 	//add content
 	$(chromo.body+' #overlay #options #opcol').append('<div class="option" id="opacity"></div>');
-	$(chromo.body+' #overlay #options #opcol .option').append('<div id="on-off" class="null"></div>');
+	$(chromo.body+' #overlay #options #opcol .option').append('<div class="on-off null"></div>');
 	$(chromo.body+' #overlay #options #opcol .option').append('<div class="op-pm"><div class="op-plus">+</div><div class="op-minus">-</div></div>')
 	$(chromo.body+' #overlay #options #opcol .option').append('<div class="label">Opacity: <span class="opval">40</span>%</div>');
 	$(chromo.body+' #overlay #options #opcol #opacity .label').click(function(){
@@ -450,14 +450,14 @@ function setupGravoscope(){
 
     //toggle coordinates on click
     $('#kiosk #options .option-coord').click(function(){
-	if($('#kiosk #options .option-coord #on-off').hasClass("gal")){
-	    $('#kiosk #options .option-coord #on-off').removeClass("gal").addClass("eq");
+	if($('#kiosk #options .option-coord .on-off').hasClass("gal")){
+	    $('#kiosk #options .option-coord .on-off').removeClass("gal").addClass("eq");
 	    $('#kiosk #options .option-coord .label').html("Equatorial");
 	    //console.log('clicked coord')
 	    //console.log($('#kiosk #options .option-coord .label').html())
 	    chromo.switchCoordinateSystem('A')
-	}else if($('#kiosk #options .option-coord #on-off').hasClass("eq")){
-	    $('#kiosk #options .option-coord #on-off').removeClass("eq").addClass("gal");
+	}else if($('#kiosk #options .option-coord .on-off').hasClass("eq")){
+	    $('#kiosk #options .option-coord .on-off').removeClass("eq").addClass("gal");
 	    $('#kiosk #options .option-coord .label').html("Galactic");
 	    chromo.switchCoordinateSystem('G')
 	}
