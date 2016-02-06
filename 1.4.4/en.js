@@ -37,5 +37,4 @@
 "microwave" : "Microwave",
 "radio" : "Radio",
 "labels" : "Labels"
-"gw150914" : "GRAV WAVE"
 }

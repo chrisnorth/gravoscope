@@ -53,20 +53,20 @@ img.map { opacity: 1; }
 	color: white;
 	text-decoration: none;
 }
-.chromo_layerswitcher span { 
-    cursor: pointer; 
-    display:block; 
+.chromo_layerswitcher span {
+    cursor: pointer;
+    display:block;
     margin:10px;
     margin-right: 5px;
-    font-weight: bold; 
-    text-shadow: 2px 2px 8px #000; 
+    font-weight: bold;
+    text-shadow: 2px 2px 8px #000;
     font-size:1em;
 }
 
-.chromo_key_highlight { 
-    height: 1em; 
-    padding-bottom: 2px!important; 
-    background-color: white; 
+.chromo_key_highlight {
+    height: 1em;
+    padding-bottom: 2px!important;
+    background-color: white;
     opacity: 0.3; }
 
 .chromo_sliderbar {
@@ -224,7 +224,7 @@ img.map { opacity: 1; }
 }
 .chromo_message {
 	position:absolute;
-	text-align:center;
+	/*text-align:center;*/
 	padding:1em;
 	z-index:102;
 	display: none;
@@ -317,7 +317,7 @@ p.social img {
 }
 
 #kiosk{
-    height: 12em;
+    height: 8em;
     width:13em;
     position: absolute;
     bottom: 4em;
@@ -451,38 +451,38 @@ p.social img {
 }
 
 #kiosk #options .label-sm{
-    font-size: 80%;    
+    font-size: 80%;
     /*line-height:100%;*/
 }
 
 #kiosk .option .arrow-right {
-	width: 0; 
+	width: 0;
 	height: 0;
 	float:right;
 	margin-top:0.3em;
 	margin-right:0.25em;
 	border-top: 0.5em solid transparent;
 	border-bottom: 0.5em solid transparent;
-	
+
 	border-left: 0.5em solid #555;
 	border-right: 0px;
 }
 
 #kiosk .option .arrow-left {
-	width: 0; 
+	width: 0;
 	height: 0;
 	float:right;
 	margin-top:0.3em;
 	margin-right:0.25em;
 	border-top: 0.5em solid transparent;
 	border-bottom: 0.5em solid transparent;
-	
+
 	border-right: 0.5em solid #555;
 	border-left: 0px;
 }
 
 #kiosk .option .arrow-null {
-	width: 0.5em; 
+	width: 0.5em;
 	height:1.8em;
 	float:right;
 	background-color:#ccc;
@@ -495,7 +495,7 @@ h4{
 }
 
 #overlay{
-    height: 12em;
+    height: 8em;
     width:40em;
     position: absolute;
     bottom:4em;
@@ -553,7 +553,7 @@ h4{
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     right:-0.7em;
     font-size: 1.3em;
-    bottom:4em;
+    bottom:2em;
     cursor: pointer;
 }
 
@@ -587,7 +587,7 @@ h4{
 }
 
 #overlay #options #opcol{
-    top:7.5em;
+    top:5em;
 }
 
 #overlay #options .label{
@@ -660,7 +660,7 @@ h4{
 .overlay_info img{
     float:left;
     width:30%;
-    margin:0px 10px 10px 0px;
+    margin:0px 0px 10px 0px;
 }
 
 .overlay_info p{

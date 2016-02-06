@@ -39,4 +39,5 @@
 "labels" : "Labels (Constellations)",
 "planck" : "Planck Labels",
 "constellations" : "Constellation labels"
+"gw150914" : "GW150914"
 }

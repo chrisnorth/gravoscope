@@ -12,15 +12,15 @@
 
 function setupGravoscope(){
     $('#kiosk').disableTextSelect();
-    chromo.gravversion='0.1.2 (BETA)';
+    chromo.gravversion='0.0.1 (BETA)';
     logging=false;
     if (logging) console.log(chromo.compact);
     $(chromo.body+' .grav_version').html(chromo.phrasebook.version+" "+chromo.gravversion);
 
     //add coordinates form
-    if (!(chromo.compact)){
-	$(chromo.body+" .chromo_helplink").append(' | <span id="coord_form"><button onclick="chromo.moveMap(parseInt(glong.value), parseInt(glat.value));">Center Map:</button><span>lon:</span><input type="text" name="glong" id="glong" value="0"><span>lat:</span><input type="text" name="glat" id="glat" value="0"> | <button onclick="chromo.reset();glat.value=0;glong.value=0">Reset</button></span>');
-    };
+    // if (!(chromo.compact)){
+	// $(chromo.body+" .chromo_helplink").append(' | <span id="coord_form"><button onclick="chromo.moveMap(parseInt(glong.value), parseInt(glat.value));">Center Map:</button><span>lon:</span><input type="text" name="glong" id="glong" value="0"><span>lat:</span><input type="text" name="glat" id="glat" value="0"> | <button onclick="chromo.reset();glat.value=0;glong.value=0">Reset</button></span>');
+    // };
     $(chromo.body+" .chromo_message").delay(5000).fadeOut(700)
     //chromo.buildHelp(true);
     //animate options panel
@@ -239,13 +239,12 @@ function setupGravoscope(){
 	    //console.log(srchid);
 	    $(this).prepend(chromo.createClose());
 	    //$(this.body+" .chromo_close").bind('click',{id:'overlay_info'}, jQuery.proxy( this, "hide" ) );
-	    $(chromo.body+' #'+srchid+' .chromo_close').on('click',{id:srchid},function(event){$(chromo.body+' #'+event.data.id).hide();});
+        $(chromo.body+' #'+srchid+' .chromo_close').on('click',{id:srchid},function(event){$(chromo.body+' #'+event.data.id).hide();});
 	    if (chromo.wide < $(this).width()) $(this).css("width",w-50+"px");
 	    //console.log(this,$(this).width());
 	    chromo.centreDiv("#"+srchid)
 
 	});
-
 
 	//********************************
 	//make options buttons in overlay
@@ -292,7 +291,7 @@ function setupGravoscope(){
     function isOverlay(key){
 	//check if a layer is an overlay layer or an annotation layer
 	//flase if key is 'c' or 'p', true otherwise
-	if (key == 'c' || key == 'p') return false;
+	if (key == 'l' || key == 'c') return false;
 	return true;
     }
     //set mouse click events options
@@ -446,7 +445,7 @@ function setupGravoscope(){
 
     //toggle grav labels on click
     $('#kiosk #options #option-labels').click(function(){
-	chromo.simulateKeyPress('p');
+	chromo.simulateKeyPress('l');
     });
 
     //toggle coordinates on click
@@ -464,62 +463,29 @@ function setupGravoscope(){
 	}
     });
 
-    //*********************************************
-    /*  grav RESULTS (CURRENTLY UNAVAILABLE)  */
-    //*********************************************
+    chromo.intronew = "Gravoscope combines two distinct views of the Universe. You can explore our Galaxy (the Milky Way) and the distant Universe in <a href=\"http://blog.chromoscope.net/data/\">a range of wavelengths</a> from gamma-rays to the longest radio waves. Change the x  wavelength using the <em>slider</em> in the top right of the screen and explore space using your mouse.<br /><br />You can also overlay the projected positions of gravitational waves detected by <a href=\"www.ligo.org\">Advanced LIGO</a>. Use the options in the bottom left to turn them on and off.<br /><br />If you get stuck, click \"Help\" in the bottom left.<br /><br /><a href=\"http://www.astro.cardiff.ac.uk/research/instr/\"><img src=\"cardiffuni.png\" style=\"border:0px;margin: 0px 5px 5px 0px;float:left;\" /></a>Chromoscope is kindly funded by the Cardiff University <a href=\"http://www.astro.cardiff.ac.uk/research/egalactic/\">Astronomy</a> and <a href=\"http://www.astro.cardiff.ac.uk/research/instr/\">Astronomy Instrumentation</a> Groups.<br style=\"clear:both;\" />";
 
-    //toggle grav results on click (CURRENTLY UNABAILABLE)
-    $('#kiosk #options .option-kml').click(function(){
-	toggleResults();
-    });
+    chromo.phrasebook.helpdesc = "NEW HELP"
+    //chromo.phrasebook.helpdesc = "The Milky Way is shown across the middle. The north pole of the Galaxy is towards the top. Use the mouse to drag the sky around. Want more info? <a href=\"#\" class=\"videolink\">Watch a quick tour</a> (opens in this window). <span class=\"keyboard\">The keyboard controls are:<ul class=\"chromo_controlkeys\"></ul></span><span class=\"nokeyboard\"><ul class=\"chromo_controlbuttons\"></ul></span> <span class=\"keyboard\">Created by <a href=\"http://www.strudel.org.uk/\">Stuart Lowe</a>, <a href=\"http://orbitingfrog.com/blog/\">Rob Simpson</a>, and <a href=\"http://www.astro.cardiff.ac.uk/contactsandpeople/?page=full&id=493\">Chris North</a>. You can also <a href=\"http://blog.chromoscope.net/download/\">download it</a> to run locally.</span>";
 
-    //toggle grav results on click (CURRENTLY UNAVAILABLE)
-    function toggleResults(){
-        if($('#kiosk #options .option-kml #on-off').hasClass('off')){
-	    kmlUrl='kml_files/results.kml';
-	    removePins();
-	    chromo.readKML(kmlUrl);
-	    $('#kiosk #options .option-kml #on-off').removeClass("off").addClass("on");
-        }else if($('#kiosk #options .option-kml #on-off').hasClass('on')){
-	    kmlUrl='';
-	    removePins();
-	    chromo.readKML(kmlUrl);
-	    $('#kiosk #options .option-kml #on-off').removeClass("on").addClass("off");
-        }
-    }
+    //Construct the splash screen
+	function buildIntroAgain(delay){
+		var w = 600;
+		// iPhones have wide but not very tall screens so we make the intro a bit wider if the screen height is small.
+		if(chromo.tall <= 640) w *= 1.2;
+		if(w > 0.8*chromo.wide) w = 0.8*chromo.wide;
+		$(chromo.body+" .chromo_message").css({width:w+"px",'max-width':''});
+		chromo.message(chromo.createClose()+chromo.intronew,false,'left')
+		$(chromo.body+" .videolink").bind('click',{me:chromo}, function(e){ e.preventDefault(); e.data.me.showVideoTour(); } );
+		$(chromo.body+" .chromo_message .chromo_close").bind('click',{id:'.chromo_message'}, jQuery.proxy( chromo, "hide" ) );
+		if(delay > 0) $(this.body+" .chromo_message").delay(delay).fadeOut(500)
+	}
 
-    //set 'r' key to toggle grav results
-    chromo.registerKey('r',function(){
-	//alert('r')
-	toggleResults();
-    },'toggle grav results')
+    buildIntroAgain();
 
-    //remove pins from Chromo.
-    function removePins(){
-        //for(var i = 0; i <= chromo.pins.length;i++){
-        //    chromo.removePin(i);
-        //}
-        //$('#body-holder-kml').remove();
-	$('.pinholder').html("");
-	chromo.kmls=[];
-	chromo.pins=[];
-    }
-
-    $(".pin").live('click',function(){
-	$(".moreinfo").fancybox({
-		'width'			: 1000,
-		'height'		: 600,
-		'autoScale'		: false,
-       		'transitionIn'		: 'fade',
-       		'transitionOut'		: 'fade',
-       		'type'			: 'iframe',
-		'autoDimensions'	: 'false'
-       	});
-	//$("#moreinfo").trigger('click');
-	return false;
-    });
-
-    //Set up fancybox stuff
-
+    //recreate Close behaviour on Help window
+    $(chromo.body+" .chromo_help .chromo_close").on('click',{id:srchid},function(event){$(chromo.body+' .chromo_help').hide();});
+    toggleOptions("max");
+    toggleOverlay("max");
 //});
 }
