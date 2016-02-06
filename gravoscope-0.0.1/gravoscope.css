@@ -663,7 +663,7 @@ POP-UP INFO BOXES
 .overlay_info img{
     float:left;
     width:30%;
-    margin:0px 0px 10px 0px;
+    margin:0px 10px 10px 0px;
 }
 
 .overlay_info p{
