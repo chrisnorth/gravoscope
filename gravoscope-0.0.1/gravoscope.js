@@ -90,9 +90,9 @@ function setupGravoscope(){
 	    $('#kiosk #options #option-const #on-off').removeClass("on").addClass("off");};
     },'toggle constellation labels')
 
-    chromo.reregisterKey('w',function(){
+    chromo.reregisterKey('l',function(){
 	//toggle grav labels
-	chromo.toggleAnnotationsByName('w');
+	chromo.toggleAnnotationsByName('l');
 	chromo.checkTiles(true)
 	//console.log('toggled grav');
 	if($('#kiosk #options #option-labels #on-off').hasClass("off")){
