@@ -136,7 +136,7 @@ img.map { opacity: 1; }
 	border-radius-bottomleft: 0.5em;
 	background-color:#000000;
 }
-.chromo_attribution {
+.chromo_attribution_wrapper {
 	font-family: Arial, sans-serif;
 	background-color:#777;
 	font-weight: bold;
@@ -151,6 +151,11 @@ img.map { opacity: 1; }
 	font-size: 0.8em;
 	opacity: 0.8;
 }
+
+.chromo_attribution{
+    float:right;
+}
+
 .chromo_helplink {
 	font-family: Arial, sans-serif;
 	background-color:#777;
@@ -631,6 +636,14 @@ OVERLAY MENU BOX
     background-color:#000;
     color:#fff;
 }
+
+/*Overlay attributions*/
+.chromo_attribution_overlay{
+    float:right;
+    display:none;
+    padding-right:0.5em;
+ }
+.chromo_attribution_overlay a { color: #ddddff; }
 
 /***************************
 POP-UP INFO BOXES

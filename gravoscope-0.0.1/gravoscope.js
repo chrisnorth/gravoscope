@@ -152,7 +152,7 @@ function setupGravoscope(){
 
 
 	//set up columns
-	var colmax=3;
+	var colmax=2;
 	var ovwid=Math.round(parseInt($(chromo.body+' #overlay').width()));
 	if (chromo.nov > colmax) ncol=2;
 	if (chromo.nov > 2*colmax) ncol=3;
@@ -183,6 +183,13 @@ function setupGravoscope(){
 	chromo.ovlmn=-13;
 	$(chromo.body+' #overlay').css({left:chromo.ovloff+'em'});
 
+    //remove attribution and put inside wrapper
+    $(chromo.body+' .chromo_attribution').remove();
+    $(chromo.body).append('<div class="chromo_attribution_wrapper"><div class="chromo_attribution"></div></div>');
+    chromo.updateCredit();
+
+    //set overlay credits text
+    chromo.overlaynumber={};
 	//add overlay buttons
 	var ovx=0;
 	var colid='col1'
@@ -201,6 +208,11 @@ function setupGravoscope(){
 		$(chromo.body+' #overlay #'+colid+' #'+divid).append('<div class="on-off off"></div>');
 		$(chromo.body+' #overlay #'+colid+' #'+divid).append('<div class="label">'+chromo.annotations[i].title+'</div>');
 		$(chromo.body+' #overlay #'+colid+' #'+divid+' .label').disableTextSelect();
+        //add overlay credit
+        if( $(chromo.body+' .chromo_attribution_wrapper #credit_'+chromo.annotations[i].attribution).length == 0){
+            $(chromo.body+' .chromo_attribution_wrapper').append('<div class="chromo_attribution_overlay" id="credit_'+chromo.annotations[i].attribution+'">'+chromo.overlaycredits[chromo.annotations[i].attribution]+' &amp;</div>');
+        }
+        chromo.overlaynumber[chromo.annotations[i].attribution]=0;
 		//sort out what happens on clicking the button
 		$(chromo.body+' #overlay #'+colid+' #'+divid).click(function(){
 		    //var srchid=$(chromo.body+' #overlay #'+colid+' #'+divid).id;
@@ -210,9 +222,15 @@ function setupGravoscope(){
 			if (chromo.annotations[j].divid == srchid){
 			    chromo.simulateKeyPress(chromo.annotations[j].key);
 			    if ($(chromo.body+' #overlay #'+srchid+' .on-off').hasClass("off")){
-				$(chromo.body+' #overlay #'+srchid+ ' .on-off').removeClass("off").addClass("on");
+				    $(chromo.body+' #overlay #'+srchid+ ' .on-off').removeClass("off").addClass("on");
+                    chromo.overlaynumber[chromo.annotations[j].attribution]++;
+                    $(chromo.body+' #credit_'+chromo.annotations[j].attribution).show();
 			    }else{
-				$(chromo.body+' #overlay #'+srchid+' .on-off').removeClass("on").addClass("off");
+				    $(chromo.body+' #overlay #'+srchid+' .on-off').removeClass("on").addClass("off");
+                    chromo.overlaynumber[chromo.annotations[j].attribution]--;
+                    if (chromo.overlaynumber[chromo.annotations[j].attribution]==0){
+                        $(chromo.body+' #credit_'+chromo.annotations[j].attribution).hide();
+                    }
 			    };
 			};
 		    };
@@ -462,6 +480,7 @@ function setupGravoscope(){
 	    chromo.switchCoordinateSystem('G')
 	}
     });
+
 
     chromo.intronew = "Gravoscope combines two distinct views of the Universe. You can explore our Galaxy (the Milky Way) and the distant Universe in <a href=\"http://blog.chromoscope.net/data/\">a range of wavelengths</a> from gamma-rays to the longest radio waves. Change the x  wavelength using the <em>slider</em> in the top right of the screen and explore space using your mouse.<br /><br />You can also overlay the projected positions of gravitational waves detected by <a href=\"www.ligo.org\">Advanced LIGO</a>. Use the options in the bottom left to turn them on and off.<br /><br />If you get stuck, click \"Help\" in the bottom left.<br /><br /><a href=\"http://www.astro.cardiff.ac.uk/research/instr/\"><img src=\"cardiffuni.png\" style=\"border:0px;margin: 0px 5px 5px 0px;float:left;\" /></a>Chromoscope is kindly funded by the Cardiff University <a href=\"http://www.astro.cardiff.ac.uk/research/egalactic/\">Astronomy</a> and <a href=\"http://www.astro.cardiff.ac.uk/research/instr/\">Astronomy Instrumentation</a> Groups.<br style=\"clear:both;\" />";
 
