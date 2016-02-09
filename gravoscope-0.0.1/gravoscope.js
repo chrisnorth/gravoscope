@@ -21,7 +21,7 @@ function setupGravoscope(){
     // if (!(chromo.compact)){
 	// $(chromo.body+" .chromo_helplink").append(' | <span id="coord_form"><button onclick="chromo.moveMap(parseInt(glong.value), parseInt(glat.value));">Center Map:</button><span>lon:</span><input type="text" name="glong" id="glong" value="0"><span>lat:</span><input type="text" name="glat" id="glat" value="0"> | <button onclick="chromo.reset();glat.value=0;glong.value=0">Reset</button></span>');
     // };
-    $(chromo.body+" .chromo_message").delay(5000).fadeOut(700)
+    //$(chromo.body+" .chromo_message").delay(50).fadeOut(700)
     //chromo.buildHelp(true);
     //animate options panel
     //process overlays
@@ -482,7 +482,7 @@ function setupGravoscope(){
     });
 
 
-    chromo.intronew = "Gravoscope combines two distinct views of the Universe. You can explore our Galaxy (the Milky Way) and the distant Universe in <a href=\"http://blog.chromoscope.net/data/\">a range of wavelengths</a> from gamma-rays to the longest radio waves. Change the x  wavelength using the <em>slider</em> in the top right of the screen and explore space using your mouse.<br /><br />You can also overlay the projected positions of gravitational waves detected by <a href=\"www.ligo.org\">Advanced LIGO</a>. Use the options in the bottom left to turn them on and off.<br /><br />If you get stuck, click \"Help\" in the bottom left.<br /><br /><a href=\"http://www.astro.cardiff.ac.uk/research/instr/\"><img src=\"cardiffuni.png\" style=\"border:0px;margin: 0px 5px 5px 0px;float:left;\" /></a>Chromoscope is kindly funded by the Cardiff University <a href=\"http://www.astro.cardiff.ac.uk/research/egalactic/\">Astronomy</a> and <a href=\"http://www.astro.cardiff.ac.uk/research/instr/\">Astronomy Instrumentation</a> Groups.<br style=\"clear:both;\" />";
+    chromo.intronew = "Gravoscope combines two distinct views of the Universe. You can explore our Galaxy (the Milky Way) and the distant Universe in <a href='http://blog.chromoscope.net/data/'>a range of wavelengths</a> from gamma-rays to the longest radio waves. Change the wavelength using the <em>slider</em> in the top right of the screen and explore space using your mouse.<br /><br />Gravoscope also allows you to overlay the projected possible locations of gravitational waves detected by <a href='www.ligo.org'>Advanced LIGO</a>. Use the options in the bottom left to turn them on and off. The positions cover large areas of sky because trangulation of gravitational wave signals is very difficult, and the location is only constrained to an area on the sky. The more likely regions are brighter.<br /><br />If you get stuck, click 'Help' in the bottom left.<br /><br /><a href='http://www.astro.cardiff.ac.uk/research/instr/'><img src='cardiffuni.png' style='border:0px;margin: 0px 5px 5px 0px;float:left;' /></a>Chromoscope is kindly funded by the Cardiff University <a href='http://www.astro.cardiff.ac.uk/research/egalactic/'>Astronomy</a> and <a href='http://www.astro.cardiff.ac.uk/research/instr/'>Astronomy Instrumentation</a> Groups.<br style='clear:both;' />";
 
     chromo.phrasebook.helpdesc = "NEW HELP"
     //chromo.phrasebook.helpdesc = "The Milky Way is shown across the middle. The north pole of the Galaxy is towards the top. Use the mouse to drag the sky around. Want more info? <a href=\"#\" class=\"videolink\">Watch a quick tour</a> (opens in this window). <span class=\"keyboard\">The keyboard controls are:<ul class=\"chromo_controlkeys\"></ul></span><span class=\"nokeyboard\"><ul class=\"chromo_controlbuttons\"></ul></span> <span class=\"keyboard\">Created by <a href=\"http://www.strudel.org.uk/\">Stuart Lowe</a>, <a href=\"http://orbitingfrog.com/blog/\">Rob Simpson</a>, and <a href=\"http://www.astro.cardiff.ac.uk/contactsandpeople/?page=full&id=493\">Chris North</a>. You can also <a href=\"http://blog.chromoscope.net/download/\">download it</a> to run locally.</span>";
@@ -500,7 +500,7 @@ function setupGravoscope(){
 		if(delay > 0) $(this.body+" .chromo_message").delay(delay).fadeOut(500)
 	}
 
-    buildIntroAgain();
+    buildIntroAgain(50);
 
     //recreate Close behaviour on Help window
     $(chromo.body+" .chromo_help .chromo_close").on('click',{id:srchid},function(event){$(chromo.body+' .chromo_help').hide();});
