@@ -42,9 +42,11 @@
       // Annotation layers will be shown at all wavelengths
       chromo.addAnnotationLayer({opacity:0.4,key:'c',name:'labels',tiles:'http://s3.amazonaws.com/chromoscope-labelsnew/',ext:'jpg',title:'labels',attribution:'some Labels from Chris'});
       chromo.addAnnotationLayer({opacity:0.4,key:'l',name:'labels_planck',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/labels_planck_gal/',ext:'jpg',title:'Labels',attribution:'Planck Labels'});
+      chromo.addAnnotationLayer({opacity:0.6,key:'2',name:'2mass',tiles:'2MRS_black-tiles/',ext:'jpg',title:'Galaxies',attribution:'2mass'});
       chromo.addAnnotationLayer({opacity:0.6,key:'1',name:'gw150914',tiles:'gw150914-tiles/',ext:'jpg',title:'GW150914',attribution:'ligo'});
       //Annotation attributions
-      chromo.overlaycredits={'ligo':"<a href='http://losc.ligo.org/events/GW150914/'>LIGO</a>"};
+      chromo.overlaycredits={'ligo':"<a href='http://losc.ligo.org/events/GW150914/'>LIGO</a>",
+            '2mass':'2MASS Galaxy Survey'};
 	  // Load the map
 	  chromo.load(setupGravoscope);
       //chromo.load();
@@ -106,6 +108,14 @@
       </div>
     </div>
 
+    <div class="chromo_popup overlay_info" id="moreinfo-2mass">
+      <h4 class="info">2MASS Galaxy Survey</h4>
+      <img src="2MRS_small.png" alt="Image">
+      <p>The <a href="http://tdc-www.harvard.edu/2mrs/">2MASS Galaxy Reshift Survey</a> measured the positions of 40,000 galaxies across the whole sky. The colours of the galaxies denote their distance, highlighting the clusters and networks threading through the cosmos. The most distant galaxies in the image are at a redshift of around 0.2, corresponding to a distance of around 2.7 billion light years, though the colour scale (shown below) saturates at small and large distances (for clarity).</p>
+      <p>For more information about the survey, please see <a href="https://ui.adsabs.harvard.edu/#abs/2012ApJS..199...26H">Huchra et al. (2012)</a> <em>APJs</em> <b>199</b> 26.</p>
+      <div style="width:100%;text-align:center"><img src="colscale.png" alt="colour scale" style="width:90%;float:none"></div>
+    </div>
+
     <div class="chromo_popup overlay_info" id="moreinfo-gw150914">
       <h4 class="info">GW150914</h4>
       <img src="gw150914_small.png" alt="Image">
@@ -126,7 +136,6 @@
       </ul>
       </p>
     </div>
-
 
   </body>
 </html>
