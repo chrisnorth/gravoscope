@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Gravoscope: Download</title>
+<link rel="icon" type="image/vnd.microsoft.icon" href="http://www.chromoscope.net/favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="stylesheet" href="download.css" type="text/css" />
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="download.js"></script>
+
+</head>
+<body>
+<div class="page">
+  <div class="hdr">
+    <h1>Gravoscope tilesets</h1>
+    <p>Below are the various tile-sets used in <a href="http://www.chromoscope.net/gravoscope">Gravoscope</a>. If you would like to run a local version, without requiring access to the internet, then you will need to download these. The source code can be downloaded from the <a href="http://github.com/chrisnorth/Gravoscope">Github respoitory</a>.</p>
+    <p>Each tile-set contains over 5000 images, archived and compressed into both tarballs (.tar.gz) and zip files. While the compressed archives are not too large (typically 10-50 MB), the uncompressed files can take up rather a large amount of space and take considerable time to extract.</p>
+    <p>Note that while the owners of the original images have given us permission to use the images in the context of Chromoscope, we do not hold the copyright to them. As with <a href="www.chromoscope.net">Chromoscope</a> itself, the tilesets are free for educational and non-commercial use. For other uses, please contact the original owners.</p>
+
+    <h2>Generating Tilesets</h2>
+    <p>Tilesets can be generated using the Perl script <a href="cutter.pl">cutter.pl</a> (written by <a href="http://strudel.org.uk">Stuart Lowe</a>) or the Java utiliy <a href="GMapImageCutter.zip">GMapImageCutter</a> (originally from <a href="https://www.bartlett.ucl.ac.uk/casa/latest/software/gmap-image-cutter">here</a>).</p>
+  </div>
+  <div style="clear:both"></div>
+
+  <div class="boxes" id="freqs" style="margin-top:10px">
+    <h2>Electromagnetic images</h2>
+    <div class="tilebox-outer">
+      <div class="tilebox" id="gamma">
+	<h3>Gamma Ray</h3>
+	<img src="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/Fermi_cut_small.jpg">
+	<div class="link-bg"></div><span class="link zip"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/fermi_3yr-tiles.zip">Zip</a></span>
+	<span class="link tar"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/fermi_3yr-tiles.tar.gz">Tarball</a></span>
+	<span class="size">(20MB)</span>
+	<p class="desc">Gamma-ray sky (<a href="http://fermi.gsfc.nasa.gov/">Fermi</a>)</p>
+	<span class="img-link"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/Fermi_3yr.png">Fullsky image</a></span>
+      </div>
+    </div>
+
+    <div class="tilebox-outer">
+      <div class="tilebox" id="xray">
+	<h3>X-ray</h3>
+	<img src="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/RASS_cut_small.jpg">
+	<div class="link-bg"></div><span class="link zip"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/RASS-tiles.zip">Zip</a></span>
+	<span class="link tar"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/RASS-tiles.tar.gz">Tarball</a></span>
+	<span class="size">(40MB)</span>
+	<p class="desc">X-ray sky (<a href="http://www.mpe.mpg.de/xray/wave/rosat/index.php">ROSAT</a>)</p>
+	<span class="img-link"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/RASS.jpg">Fullsky image</a></span>
+      </div>
+    </div>
+
+    <div class="tilebox-outer">
+      <div class="tilebox" id="dss">
+	<h3>Visible (DSS)</h3>
+	<img src="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/dss_cut_small.jpg">
+	<div class="link-bg"></div><span class="link zip"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/DSS-tiles.zip">Zip</a></span>
+	<span class="link tar"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/DSS-tiles.tar.gz">Tarball</a></span>
+	<span class="size">(10MB)</span>
+	<p class="desc">Visible sky (<a href="http://stdatu.stsci.edu/dss/">DSS</a>/<a href="http://www.wikisky.org/">Wikisky</a>)</p>
+	<span class="img-link"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/DSS_6000.jpg">Fullsky image</a></span>
+      </div>
+    </div>
+
+    <div class="tilebox-outer">
+      <div class="tilebox" id="skysurvey">
+	<h3>Visible (Skysurvey.org)</h3>
+	<img src="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/Skysurvey_cut_small.jpg">
+	<div class="link-bg"></div><span class="link zip"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/Skysurvey_3000_CC_BY-NC-tiles.zip">Zip</a></span>
+	<span class="link tar"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/Skysurvey_3000_CC_BY-NC-tiles.tar.gz">Tarball</a></span>
+	<span class="size">(1MB)</span>
+	<p class="desc">Visible sky (<a href="http://skysurvey.org/">Skysurvey.org</a>, low zooms
+only)</p>
+	<span class="img-link"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/Skysurvey_3000_CC_BY-NC.jpg">Fullsky image</a></span>
+      </div>
+    </div>
+
+    <div class="tilebox-outer">
+      <div class="tilebox" id="h-alpha">
+	<h3>Hydrogen alpha</h3>
+	<img src="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/H-alpha_cut_small.jpg">
+	<div class="link-bg"></div><span class="link zip"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/H-alpha-tiles.zip">Zip</a></span>
+	<span class="link tar"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/H-alpha-tiles.tar.gz">Tarball</a></span>
+	<span class="size">(10MB)</span>
+	<p class="desc">Hydrogen-alpha sky (<a href="http://www.cfa.harvard.edu/~dfinkbei/">Finkbeiner et al.</a>)</p>
+	<span class="img-link"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/H-alpha.png">Fullsky image</a></span>
+      </div>
+    </div>
+
+    <div class="tilebox-outer">
+      <div class="tilebox" id="wise">
+	<h3>Near-Infrared</h3>
+	<img src="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/WISE_cut_small.jpg">
+	<div class="link-bg"></div><span class="link zip"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/WISE-tiles.zip">Zip</a></span>
+	<span class="link tar"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/WISE-tiles.tar.gz">Tarball</a></span>
+	<span class="size">(20MB)</span>
+	<p class="desc">Near-Infrared sky (<a href="http://wise.ssl.berkely.edu/IRASdocs/iras.html">WISE</a>)</p>
+	<span class="img-link"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/WISE_6000.jpg">Fullsky image</a></span>
+      </div>
+    </div>
+
+    <div class="tilebox-outer">
+      <div class="tilebox" id="iras">
+	<h3>Far-Infrared</h3>
+	<img src="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/IRAS_cut_small.jpg">
+	<div class="link-bg"></div><span class="link zip"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/IRAS-tiles.zip">Zip</a></span>
+	<span class="link tar"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/IRAS-tiles.tar.gz">Tarball</a></span>
+	<span class="size">(10MB)</span>
+	<p class="desc">Far-infrared sky (<a href="http://irsa.ipac.caltech.edu/IRASdocs/iras.html">IRAS</a>)</p>
+	<span class="img-link"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/IRAS.jpg">Fullsky image</a></span>
+      </div>
+    </div>
+
+    <div class="tilebox-outer">
+      <div class="tilebox" id="planck">
+	<h3>Microwave</h3>
+	<img src="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/planck_cut_small.jpg">
+	<div class="link-bg"></div><span class="link zip"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/Planck-tiles.zip">Zip</a></span>
+	<span class="link tar"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/Planck-tiles.tar.gz">Tarball</a></span>
+	<span class="size">(20MB)</span>
+	<p class="desc">Microwave sky (<a href="http://www.esa.int/planck">Planck</a>)</p>
+	<span class="img-link"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/PLANCK_FSM_03_Cartesian_10k.png">Fullsky image</a></span>
+      </div>
+    </div>
+
+    <div class="tilebox-outer">
+      <div class="tilebox" id="radio">
+	<h3>Radio</h3>
+	<img src="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/Radio_cut_small.jpg">
+	<div class="link-bg"></div><span class="link zip"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/Radio_vsmoothed-tiles.zip">Zip</a></span>
+	<span class="link tar"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/Radio_vsmoothed-tiles.tar.gz">Tarball</a></span>
+	<span class="size">(3MB)</span>
+	<p class="desc">Radio sky (<a href="http://lambda.gsfc.nasa.gov/product/foreground/haslam_408.cfm">Haslam et al.</a>)</p>
+	<span class="img-link"><a href="http://astrog80.astro.cf.ac.uk/Chromoscope-tiles/Radio_vsmoothed.jpg">Fullsky image</a></span>
+      </div>
+    </div>
+    <div style="clear:both"></div>
+    </div>
+
+    <div class="boxes" id="overlay" style="margin-top:10px">
+      <h2>Overlay images</h2>
+
+    <div class="tilebox-outer">
+      <div class="tilebox" id="constellations">
+	<h3>Constellations</h3>
+	<img src="labels_cut_small.jpg">
+	<div class="link-bg"></div><span class="link zip"><a href="labels_const2_gal.zip">Zip</a></span>
+	<span class="link tar"><a href="labels_const2_gal.tar.gz">Tarball</a></span>
+	<span class="size">(5MB)</span>
+	<p class="desc">Constellation labels</p>
+	<span class="img-link"><a href="labels_const_zoom5_black.png">Fullsky image</a></span>
+      </div>
+    </div>
+
+    <div class="tilebox-outer">
+      <div class="tilebox" id="labels">
+	<h3>Labels</h3>
+	<img src="labels_planck_cut_small.jpg">
+	<div class="link-bg"></div><span class="link zip"><a href="labels_planck_gal.zip">Zip</a></span>
+	<span class="link tar"><a href="labels_planck_gal.tar.gz">Tarball</a></span>
+	<span class="size">(5MB)</span>
+	<p class="desc">Other Labels</p>
+	<span class="img-link"><a href="Labels_overlay_12000px.png">Fullsky image</a> (<a href="http://astrog80.astro.cf.ac.uk/Planck/Planckoscope-tiles/labels_Planck.psd">PSD file</a>)</span>
+      </div>
+    </div>
+
+    <div class="tilebox-outer">
+      <div class="tilebox" id="2MRS">
+	<h3>2MRS</h3>
+	<img src="2MRS_small.png">
+	<div class="link-bg"></div><span class="link zip"><a href="2MRS_black-tiles.zip">Zip</a></span>
+	<span class="link tar"><a href="2MRS_black-tiles.tar.gz">Tarball</a></span>
+	<span class="size">(17MB)</span>
+	<p class="desc">Nearby Galaxy Survey</p>
+	<span class="img-link"><a href="2MRS.png">Fullsky image</a></span>
+      </div>
+    </div>
+
+    <div style="clear:both"></div>
+  </div>
+
+  <div class="boxes" id="localisations" style="margin-top:10px">
+    <h2>Gravitational Wave Sources</h2>
+  <div class="tilebox-outer">
+    <div class="tilebox" id="labels">
+  <h3>GW150914</h3>
+  <img src="LALInference_skymap_GW150914_small.png">
+  <div class="link-bg"></div><span class="link zip"><a href="gw150914-tiles.zip">Zip</a></span>
+  <span class="link tar"><a href="gw150914-tiles.tar.gz">Tarball</a></span>
+  <span class="size">(4MB)</span>
+  <p class="desc">GW150914</p>
+  <span class="img-link"><a href="LALInference_skymap_GW150914.png">Fullsky image</a></span>
+    </div>
+  </div>
+
+  <div class="tilebox-outer">
+    <div class="tilebox" id="labels">
+  <h3>GW151226</h3>
+  <img src="LALInference_skymap_GW151226_small.png">
+  <div class="link-bg"></div><span class="link zip"><a href="gw151226-tiles.zip">Zip</a></span>
+  <span class="link tar"><a href="gw151226-tiles.tar.gz">Tarball</a></span>
+  <span class="size">(4MB)</span>
+  <p class="desc">GW151226</p>
+  <span class="img-link"><a href="LALInference_skymap_GW151226.png">Fullsky image</a></span>
+    </div>
+  </div>
+
+  <div class="tilebox-outer">
+    <div class="tilebox" id="labels">
+  <h3>LVT151012</h3>
+  <img src="LALInference_skymap_LVT151012_small.png">
+  <div class="link-bg"></div><span class="link zip"><a href="lvt151226-tiles.zip">Zip</a></span>
+  <span class="link tar"><a href="lvt151226-tiles.tar.gz">Tarball</a></span>
+  <span class="size">(4MB)</span>
+  <p class="desc">LVT151012</p>
+  <span class="img-link"><a href="LALInference_skymap_LVT151012.png">Fullsky image</a></span>
+    </div>
+  </div>
+
+  <div style="clear:both"></div>
+</div>
+
+  <div style="clear:both"></div>
+</div>
+
+</body>
+</html>
