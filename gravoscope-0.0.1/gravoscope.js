@@ -180,7 +180,7 @@ function setupGravoscope(){
 
 	chromo.ovloff=-ovw-2;
 	chromo.ovlmx=-1;
-	chromo.ovlmn=-13;
+	chromo.ovlmn=-22.5;
 	$(chromo.body+' #overlay').css({left:chromo.ovloff+'em'});
 
     //remove attribution and put inside wrapper
