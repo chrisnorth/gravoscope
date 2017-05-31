@@ -40,8 +40,8 @@
       chromo.addWavelength({key:'r',useasdefault:false,name:'radio',tiles:'http://s3.amazonaws.com/Chromoscope/Radio-tiles/',ext:'jpg',title:'radio',attribution:'<a href="http://lambda.gsfc.nasa.gov/product/foreground/haslam_408.cfm">Haslam et al.</a>'});
 
       // Annotation layers will be shown at all wavelengths
-      chromo.addAnnotationLayer({opacity:0.4,key:'c',name:'labels',tiles:'http://s3-eu-west-1.amazonaws.com/planckoscope/labels_const_gal/',ext:'jpg',title:'labels',attribution:'some Labels from Chris'});
-      chromo.addAnnotationLayer({opacity:0.4,key:'l',name:'labels_planck',tiles:'https://s3-eu-west-1.amazonaws.com/planckoscope/labels_planck_gal/',ext:'jpg',title:'Labels',attribution:'Planck Labels'});
+      chromo.addAnnotationLayer({opacity:0.4,key:'c',name:'labels',tiles:'http://s3-eu-west-1.amazonaws.com/Chromoscope/labels_const2_gal/',ext:'jpg',title:'labels',attribution:'some Labels from Chris'});
+      chromo.addAnnotationLayer({opacity:0.4,key:'l',name:'labels_gw',tiles:'./labels_gw-tiles/',ext:'jpg',title:'Labels',attribution:'Labels'});
       chromo.addAnnotationLayer({opacity:0.6,key:'1',name:'gw150914',tiles:'https://s3.amazonaws.com/gravoscope/gw150914-tiles/',ext:'jpg',title:'GW150914',attribution:'ligo'});
       chromo.addAnnotationLayer({opacity:0.6,key:'2',name:'gw151226',tiles:'https://s3.amazonaws.com/gravoscope/gw151226-tiles/',ext:'jpg',title:'GW151226',attribution:'ligo'});
       chromo.addAnnotationLayer({opacity:0.6,key:'3',name:'lvt151012',tiles:'https://s3.amazonaws.com/gravoscope/lvt151012-tiles/',ext:'jpg',title:'LVT151012',attribution:'ligo'});
@@ -121,8 +121,8 @@
     <div class="chromo_popup overlay_info" id="moreinfo-gw150914">
       <h4 class="info">GW150914</h4>
       <img src="gw150914_small.png" alt="Image">
-      <p>GW150914 was the first ever gravitational wave signal discovered, and was detected by the twin LIGO detectors in the United States. The source was the coallescence of two black holes, each around 30 times the mass of the Sun, making this the first observational evidence of a binary black hole.</p>
-      <p>The signal arrived at LIGO Livingston around 7 milliseconds before it arrived at LIGO Hanford, allowing its position to be constrained largely to the Southern Hemisphere. Although its possible locations appear to include the Large Magallenic Cloud, its distance of 1300 light years means that it originated much further away, likely in a distant galaxy.Additional information between the detectors, such as the relative phase of the gravitational waves, means that the localisation is restricted largely to one part of the sky, rather than a complete ring.
+      <p>GW150914 was the first ever gravitational wave signal directly observed, and was detected by the twin LIGO detectors in the United States. The source was the coalescence of two black holes, each around 30 times the mass of the Sun, making this the first observational evidence of a stellar-mass binary black hole.</p>
+      <p>The signal arrived at LIGO Livingston around 7 milliseconds before it arrived at LIGO Hanford, allowing its position to be constrained largely to the Southern Hemisphere. Although its possible locations appear to include the Large Magallenic Cloud, its distance of 1300 light years means that it originated much further away, likely in a distant galaxy. Additional information contained in the signal, such as the relative amplitude observed at each observatory, means that the localization is restricted largely to one part of the sky, rather than a complete ring.
       <ul><li><b>Date:</b> 14 September 2015 09:50:45 UTC</li>
       <li><b>Source type:</b> Binary Black Hole</li>
       <li><b>Initial black hole masses:</b> 25-33 M<sub>&#x02299;</sub> &amp; 32-41 M<sub>&#x02299;</sub></li>
@@ -130,9 +130,9 @@
       <li><b>Distance:</b> 750-1900 million light years</li>
       <li><b>Peak power:</b> 3.6 x 10<sup>49</sup>W &nbsp;&nbsp;(3.6 x 10<sup>56</sup>ergs/s)</li>
       <li><b>Energy radiated:</b> 6 x 10<sup>47</sup>J &nbsp;&nbsp;(3 M<sub>&#x02299;</sub>c<sup>2</sup>)</li>
-      <li><b>Peak strain:</b> 10<sup>-21</sup></li>
+      <li><b>Signal-to-noise ratio:</b> 23.7</li>
       <li><b>Detectors:</b> <a href="https://ligo.caltech.edu/LA">LIGO Livingston</a> (LA, USA), <a href="https://ligo.caltech.edu/WA">LIGO Hanford</a> (WA, USA)</li>
-      <li><b>Arrival time separation:</b> 7 ms</li>
+      <li><b>Time delay between LIGO detectors:</b> 7 ms (Livingston earlier)</li>
       <li><b>Location resolved to:</b> 220 deg<sup>2</sup></li>
       <li><b>Scientific data:</b> <a href="http://losc.ligo.org/events/GW150914">LIGO Open Science Center</a>
       </ul>
@@ -142,8 +142,8 @@
     <div class="chromo_popup overlay_info" id="moreinfo-gw151226">
       <h4 class="info">GW151226</h4>
       <img src="gw151226_small.png" alt="Image">
-      <p>GW151226 was the second ever gravitational wave signal discovered at any significance, and was detected by the twin LIGO detectors in the United States. The source was the coallescence of two black holes, one of which was 5-10 times the mass of the Sun and the other roughly double that.</p>
-      <p>The signal arrived at LIGO Livingston around 1 millisecond before it arrived at LIGO Hanford, allowing its position to be constrained to two. Its distance of around 1300 light years means that it originated in a distant galaxy. Compared with the first detection (GW150914) the lower masses of these black holes, and the similarly large distance, the properties of the system are less well constrained.
+      <p>GW151226 was the second most significant source detected in Advances LIGO's first observing run. The source was the coalescence of two black holes, one of which was 5-10 times the mass of the Sun and the other roughly double that.</p>
+      <p>The signal arrived at LIGO Livingston around 1 millisecond before it arrived at LIGO Hanford, allowing its position to be constrained to segments of a single ring around the sky. Its distance of around 1400 million light years means that it originated in a distant galaxy. Because the signal was weaker, many of the properties of this system are less well constrained compared with the first detection (GW150914).
       <ul><li><b>Date:</b> 26 December 2015 03:38:53 UTC</li>
       <li><b>Source type:</b> Binary Black Hole</li>
       <li><b>Initial black hole masses:</b> 10-23 M<sub>&#x02299;</sub> &amp; 5-10 M<sub>&#x02299;</sub></li>
@@ -151,9 +151,9 @@
       <li><b>Distance:</b> 800-2000 million light years</li>
       <li><b>Peak power:</b> 3.3 x 10<sup>49</sup>W &nbsp;&nbsp;(3.3 x 10<sup>56</sup>ergs/s)</li>
       <li><b>Energy radiated:</b> 2 x 10<sup>47</sup>J &nbsp;&nbsp;(1 M<sub>&#x02299;</sub>c<sup>2</sup>)</li>
-      <li><b>Peak strain:</b> 10<sup>-22</sup></li>
+      <li><b>Signal-to-noise ratio:</b> 13</li>
       <li><b>Detectors:</b> <a href="https://ligo.caltech.edu/LA">LIGO Livingston</a> (LA, USA), <a href="https://ligo.caltech.edu/WA">LIGO Hanford</a> (WA, USA)</li>
-      <li><b>Arrival time separation:</b> 1.1 ms</li>
+      <li><b>Time delay between LIGO detectors:</b> 1.1 ms (Livingston earlier)</li>
       <li><b>Location resolved to:</b> 860 deg<sup>2</sup></li>
       <li><b>Scientific data:</b> <a href="http://losc.ligo.org/events/GW151226">LIGO Open Science Center</a>
       </ul>
@@ -163,8 +163,8 @@
     <div class="chromo_popup overlay_info" id="moreinfo-lvt151012">
       <h4 class="info">LVT151012</h4>
       <img src="lvt151012_small.png" alt="Image">
-      <p>LVT151012 is the third most significant gravitational wave candidate signal discovered by LIGO in the first run (Sept 2015-Jan 2016). It was detected by the twin LIGO detectors in the United States, but not with enough certainty to be declared a definite detection, though the probability of it being a false alarm is 5%. If real, the source was the coallescence of two black holes of around 23 and 13 times the mass of the Sun. However, given the uncertainty, these masses are uncertain.</p>
-      <p>The signal arrived at LIGO Hanford around 1 millisecond before it arrived at LIGO Livingston, allowing its position to be constrained to two. Its distance of around 3000 light years means that it originated in a distant galaxy. Compared with the first detection (GW150914) the slightly lower masses of these black holes and the much larger distance, the properties of the system are less well constrained.
+      <p>LVT151012 is the third most significant gravitational wave candidate signal discovered by Advanced LIGO in the first observing run (Sept 2015-Jan 2016). It was detected by the twin LIGO detectors in the United States, but not with enough certainty to be declared a definite detection, though the probability of it being a false alarm is 5%. If real, the source was the coallescence of two black holes of around 23 and 13 times the mass of the Sun. Due to the weak signal compared with the noise, these masses estimates have significant uncertainty</p>
+      <p>The signal arrived at LIGO Hanford around 1 millisecond before it arrived at LIGO Livingston, allowing its position to be constrained to two segments of a single ring around the sky. Its distance of around 3300 million light years means that it originated in a distant galaxy. Compared with much lower signal-to-noise ratio, the properties of the system are less well constrained than for the other two detection in the first observing run.
       <ul><li><b>Date:</b> 12 October 2015 09:54:43 UTC</li>
       <li><b>Source type:</b> Binary Black Hole</li>
       <li><b>Initial black hole masses:</b> 7-41 M<sub>&#x02299;</sub> &amp; 8-17 M<sub>&#x02299;</sub></li>
@@ -172,9 +172,9 @@
       <li><b>Distance:</b> 1700-5000 million light years</li>
       <li><b>Peak power:</b> 3.1 x 10<sup>49</sup>W &nbsp;&nbsp;(3.1 x 10<sup>56</sup>ergs/s)</li>
       <li><b>Energy radiated:</b> 2.7 x 10<sup>47</sup>J &nbsp;&nbsp;(1.5 M<sub>&#x02299;</sub>c<sup>2</sup>)</li>
-      <li><b>Peak strain:</b> 10<sup>-22</sup></li>
+      <li><b>Signal-to-noise ratio:</b> 9.7</li>
       <li><b>Detectors:</b> <a href="https://ligo.caltech.edu/LA">LIGO Livingston</a> (LA, USA), <a href="https://ligo.caltech.edu/WA">LIGO Hanford</a> (WA, USA)</li>
-      <li><b>Arrival time separation:</b> 1.1 ms</li>
+      <li><b>Time delay between LIGO detectors:</b> 1.1 ms (Hanford earlier)</li>
       <li><b>Location resolved to:</b> 1580 deg<sup>2</sup></li>
       <li><b>Scientific data:</b> <a href="http://losc.ligo.org/events/LVT151012">LIGO Open Science Center</a>
       </ul>
