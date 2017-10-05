@@ -2,7 +2,7 @@
   <head>
     <title>Gravoscope - View the Universe in a different way</title>
     <!--<link rel="icon" type="image/vnd.microsoft.icon" href="planck_logo.ico" />-->
-    <link rel="stylesheet" href="gravoscope-0.0.1/gravoscope.css" type="text/css" />
+    <link rel="stylesheet" href="gravoscope-0.0.2/gravoscope.css" type="text/css" />
     <!--[if IE 6]><link rel="stylesheet" href="1.4.4/style-ie.css" type="text/css" /><![endif]-->
     <script src="1.4.4/jquery-1.7.1.min.js"></script>
     <script src="1.4.4/jquery.mousewheel.min.js"></script>
@@ -12,7 +12,7 @@
     <script src="1.4.4/chromoscope-contextmenu.js"></script>
     <!--<script src="1.4.4/chromoscope-coordswitcher.js"></script>-->
     <!--<script type="text/javascript" src="planck-0.1.0/chromoscope-addoverlay.js"></script>-->
-    <script type="text/javascript" src="gravoscope-0.0.1/chromoscope-reregisterkey.js"></script>
+    <script type="text/javascript" src="gravoscope-0.0.2/chromoscope-reregisterkey.js"></script>
     <script type="text/javascript" src="1.4.4/ui/jquery.ui.core.min.js"></script>
     <script type="text/javascript" src="1.4.4/ui/jquery.ui.widget.min.js"></script>
     <script type="text/javascript" src="1.4.4/ui/jquery.ui.mouse.min.js"></script>
@@ -20,7 +20,7 @@
     <script type="text/javascript" src="fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
     <script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
     <link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.4.css" media="screen" />
-    <script type="text/javascript" src="gravoscope-0.0.1/gravoscope.js"></script>
+    <script type="text/javascript" src="gravoscope-0.0.2/gravoscope.js"></script>
     <script type="text/javascript">
       <!--
   	  var kmlUrl = 'kml_files/results.kml';
@@ -40,16 +40,18 @@
       chromo.addWavelength({key:'r',useasdefault:false,name:'radio',tiles:'http://s3.amazonaws.com/Chromoscope/Radio-tiles/',ext:'jpg',title:'radio',attribution:'<a href="http://lambda.gsfc.nasa.gov/product/foreground/haslam_408.cfm">Haslam et al.</a>'});
 
       // Annotation layers will be shown at all wavelengths
-      chromo.addAnnotationLayer({opacity:0.4,key:'c',name:'labels',tiles:'http://s3.amazonaws.com/Chromoscope/labels-tiles/',ext:'jpg',title:'constellations',attribution:'Constellations'});
-      chromo.addAnnotationLayer({opacity:0.4,key:'l',name:'labels_planck',tiles:'https://s3.amazonaws.com/gravoscope/labels_gw-tiles/',ext:'jpg',title:'Labels',attribution:'Labels'});
+      chromo.addAnnotationLayer({opacity:0.4,key:'c',name:'labels',tiles:{z:'http://s3.amazonaws.com/gravoscope/labels_const-tiles_trans/',z3:'http://s3.amazonaws.com/gravoscope/labels_const2_gal_trans/',z4:'labels_const2_gal_trans/'},ext:'png',title:'constellations',attribution:'Constellations'});
+      chromo.addAnnotationLayer({opacity:0.4,key:'l',name:'gw',tiles:'http://s3.amazonaws.com/gravoscope/labels_gw-tiles_trans/',ext:'png',title:'Labels',attribution:'Labels'});
 
-      chromo.addAnnotationLayer({opacity:0.6,key:'1',name:'gw150914',tiles:'https://s3.amazonaws.com/gravoscope/gw150914-tiles/',ext:'jpg',title:'GW150914',attribution:'ligo'});
-      chromo.addAnnotationLayer({opacity:0.6,key:'2',name:'gw151226',tiles:'https://s3.amazonaws.com/gravoscope/gw151226-tiles/',ext:'jpg',title:'GW151226',attribution:'ligo'});
-      chromo.addAnnotationLayer({opacity:0.6,key:'3',name:'lvt151012',tiles:'https://s3.amazonaws.com/gravoscope/lvt151012-tiles/',ext:'jpg',title:'LVT151012',attribution:'ligo'});
-      chromo.addAnnotationLayer({opacity:0.6,key:'4',name:'gw170104',tiles:'https://s3.amazonaws.com/gravoscope/gw170104-tiles/',ext:'jpg',title:'GW170104',attribution:'ligo'});
-      chromo.addAnnotationLayer({opacity:0.6,key:'0',name:'2mass',tiles:'2MRS_black-tiles/',ext:'jpg',title:'Galaxies',attribution:'2mass'});
-      //Annotation attributions
-      chromo.overlaycredits={'ligo':"<a href='http://losc.ligo.org'>LIGO</a>",
+      chromo.addAnnotationLayer({opacity:0.6,key:'1',name:'gw150914',tiles:'http://s3.amazonaws.com/gravoscope/gw150914-tiles_trans/',ext:'png',title:'GW150914',attribution:'ligo'});
+      chromo.addAnnotationLayer({opacity:0.6,key:'2',name:'gw151226',tiles:'http://s3.amazonaws.com/gravoscope/gw151226-tiles_trans/',ext:'png',title:'GW151226',attribution:'ligo'});
+      chromo.addAnnotationLayer({opacity:0.6,key:'3',name:'lvt151012',tiles:'http://s3.amazonaws.com/gravoscope/lvt151012-tiles_trans/',ext:'png',title:'LVT151012',attribution:'ligo'});
+      chromo.addAnnotationLayer({opacity:0.6,key:'4',name:'gw170104',tiles:'http://s3.amazonaws.com/gravoscope/gw170104-tiles_trans/',ext:'png',title:'GW170104',attribution:'ligo'});
+      chromo.addAnnotationLayer({opacity:0.6,key:'5',name:'gw170814',tiles:'http://s3.amazonaws.com/gravoscope/gw170814-tiles_trans/',ext:'png',title:'GW170814',attribution:'ligo'});
+
+      chromo.addAnnotationLayer({opacity:0.6,key:'0',name:'2mass',tiles:'http://s3.amazonaws.com/gravoscope/2MRS_black-tiles_trans/',ext:'png',title:'Galaxies',attribution:'2mass'});
+
+      chromo.overlaycredits={'ligo':"<a href='http://losc.ligo.org'>LIGO/Virgo</a>",
             '2mass':'2MASS Galaxy Survey'};
 	  // Load the map
 	  chromo.load(setupGravoscope);
@@ -200,6 +202,26 @@
       <li><b>Time delay between LIGO detectors:</b> 3.0 ms (Hanford first)</li>
       <li><b>Location resolved to:</b> 1200 deg<sup>2</sup></li>
       <li><b>Scientific data:</b> <a href="http://losc.ligo.org/events/GW170104">LIGO Open Science Center</a>
+      </ul>
+      </p>
+    </div>
+
+    <div class="chromo_popup overlay_info" id="moreinfo-gw170814">
+      <h4 class="info">GW170814</h4>
+      <img src="gw170814_small.png" alt="Image">
+      <p>GW170814 was the first gravitational wave signal detected by three detectors - the two Advanced LIGO detectors and the Advanced Virgo detector near Pisa, Italy. The source was the coalescence of two black holes, which were about 20 and 30 times the mass of the Sun.</p>
+      <p>Because the signal was detected by three detectors, its location on the sky is much better known than previous sources reduced to just 60 deg<sup>2</sup> with the addition of Virgo.
+      <ul><li><b>Date:</b> 14 August 2017 10:30:43 UTC</li>
+      <li><b>Source type:</b> Binary Black Hole</li>
+      <li><b>Initial black hole masses:</b> 28-36 M<sub>&#x02299;</sub> &amp; 21-28 M<sub>&#x02299;</sub></li>
+      <li><b>Final black hole mass</b> 51-56 M<sub>&#x02299;</sub></li>
+      <li><b>Distance:</b> 1100-2200 million light years</li>
+      <li><b>Signal-to-noise ratio:</b> 18</li>
+      <li><b>Peak power:</b> 3.7 x 10<sup>49</sup>W &nbsp;&nbsp;(21- M<sub>&#x02299;</sub>c<sup>2</sup>/s)</li>
+      <li><b>Energy radiated:</b> 4.8 x 10<sup>47</sup>J &nbsp;&nbsp;(2.7 M<sub>&#x02299;</sub>c<sup>2</sup>)</li>
+      <li><b>Detectors:</b> <a href="https://ligo.caltech.edu/LA">LIGO Livingston</a> (LA, USA), <a href="https://ligo.caltech.edu/WA">LIGO Hanford</a> (WA, USA), <a href="http://www.virgo-gw.eu/">Virgo</a> (Cascina), Italy)</li>
+      <li><b>Relative arrival times:</b> 0 ms (Livingston first); 8 ms (Hanford); 14ms Virgo</li>
+      <li><b>Location resolved to:</b> 60 deg<sup>2</sup> (1160 deg<sup>2</sup> without Virgo)</li>
       </ul>
       </p>
     </div>
