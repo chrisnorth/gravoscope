@@ -1,6 +1,6 @@
 /*
  *
- * Gravoscope v0.1.1
+ * Gravoscope v0.2.2
  *
  * Written by Chris North for the Planck Royal Society Summer Science Exhibition 2013 as an educational resource.
  *
@@ -8,6 +8,8 @@
  *
  * Functions in v0.0.1
  *   Based originally on Planckoscope v0.1.2
+ * v0.0.1
+ *   Default opacity now 100% (transparent tiles)
  */
 
 function setupGravoscope(){
@@ -298,7 +300,7 @@ function setupGravoscope(){
     }
 
     //toggleOverlay();
-    chromo.defaultOpacity=60; //default opacity for overlays
+    chromo.defaultOpacity=100; //default opacity for overlays
     resetOpacity(); //reset opacities to default value
 
 
