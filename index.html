@@ -40,8 +40,8 @@
       chromo.addWavelength({key:'r',useasdefault:false,name:'radio',tiles:'http://s3.amazonaws.com/Chromoscope/Radio-tiles/',ext:'jpg',title:'radio',attribution:'<a href="http://lambda.gsfc.nasa.gov/product/foreground/haslam_408.cfm">Haslam et al.</a>'});
 
       // Annotation layers will be shown at all wavelengths
-      chromo.addAnnotationLayer({opacity:0.4,key:'c',name:'labels',tiles:{z:'http://s3.amazonaws.com/gravoscope/labels_const-tiles_trans/',z3:'http://s3.amazonaws.com/gravoscope/labels_const2_gal_trans/',z4:'labels_const2_gal_trans/'},ext:'png',title:'constellations',attribution:'Constellations'});
-      chromo.addAnnotationLayer({opacity:0.4,key:'l',name:'gw',tiles:'http://s3.amazonaws.com/gravoscope/labels_gw-tiles_trans/',ext:'png',title:'Labels',attribution:'Labels'});
+      chromo.addAnnotationLayer({opacity:0.4,key:'c',name:'labels',tiles:{z:'http://s3.amazonaws.com/gravoscope/labels_const-tiles_trans/',z3:'http://s3.amazonaws.com/gravoscope/labels_const2_gal_trans/',z4:'http://s3.amazonaws.com/gravoscope/labels_const2_gal_trans/'},ext:'png',title:'constellations',attribution:'Constellations'});
+      chromo.addAnnotationLayer({opacity:0.4,key:'l',name:'gw',tiles:'http://s3.amazonaws.com/gravoscope/labels_gw-tiles/',ext:'jpg',title:'Labels',attribution:'Labels'});
 
       chromo.addAnnotationLayer({opacity:0.6,key:'1',name:'gw150914',tiles:'http://s3.amazonaws.com/gravoscope/gw150914-tiles_trans/',ext:'png',title:'GW150914',attribution:'ligo'});
       chromo.addAnnotationLayer({opacity:0.6,key:'2',name:'gw151226',tiles:'http://s3.amazonaws.com/gravoscope/gw151226-tiles_trans/',ext:'png',title:'GW151226',attribution:'ligo'});
