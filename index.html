@@ -41,16 +41,16 @@
 
       // Annotation layers will be shown at all wavelengths
       chromo.addAnnotationLayer({opacity:0.4,key:'c',name:'labels',tiles:{z:'http://s3.amazonaws.com/gravoscope/labels_const-tiles_trans/',z3:'http://s3.amazonaws.com/gravoscope/labels_const2_gal_trans/',z4:'http://s3.amazonaws.com/gravoscope/labels_const2_gal_trans/'},ext:'png',title:'constellations',attribution:'Constellations'});
-      chromo.addAnnotationLayer({opacity:0.4,key:'l',name:'gw',tiles:'http://s3.amazonaws.com/gravoscope/labels_gw-tiles/',ext:'jpg',title:'Labels',attribution:'Labels'});
+      chromo.addAnnotationLayer({opacity:0.4,key:'l',name:'gw',tiles:'http://s3.amazonaws.com/gravoscope/labels_gw-tiles_trans/',ext:'png',title:'Labels',attribution:'Labels'});
 
       chromo.addAnnotationLayer({opacity:0.6,key:'1',name:'gw150914',tiles:'http://s3.amazonaws.com/gravoscope/gw150914-tiles_trans/',ext:'png',title:'GW150914',attribution:'ligo'});
       chromo.addAnnotationLayer({opacity:0.6,key:'2',name:'gw151226',tiles:'http://s3.amazonaws.com/gravoscope/gw151226-tiles_trans/',ext:'png',title:'GW151226',attribution:'ligo'});
       chromo.addAnnotationLayer({opacity:0.6,key:'3',name:'lvt151012',tiles:'http://s3.amazonaws.com/gravoscope/lvt151012-tiles_trans/',ext:'png',title:'LVT151012',attribution:'ligo'});
       chromo.addAnnotationLayer({opacity:0.6,key:'4',name:'gw170104',tiles:'http://s3.amazonaws.com/gravoscope/gw170104-tiles_trans/',ext:'png',title:'GW170104',attribution:'ligo'});
       chromo.addAnnotationLayer({opacity:0.6,key:'5',name:'gw170814',tiles:'http://s3.amazonaws.com/gravoscope/gw170814-tiles_trans/',ext:'png',title:'GW170814',attribution:'ligo'});
-
+      chromo.addAnnotationLayer({opacity:0.6,key:'6',name:'gw170817',tiles:'http://s3.amazonaws.com/gravoscope/gw170817-tiles_trans/',ext:'png',title:'GW170817',attribution:'ligo'});
       chromo.addAnnotationLayer({opacity:0.6,key:'0',name:'2mass',tiles:'http://s3.amazonaws.com/gravoscope/2MRS_black-tiles_trans/',ext:'png',title:'Galaxies',attribution:'2mass'});
-
+      //Annotation attributions
       chromo.overlaycredits={'ligo':"<a href='http://losc.ligo.org'>LIGO/Virgo</a>",
             '2mass':'2MASS Galaxy Survey'};
 	  // Load the map
@@ -225,6 +225,23 @@
       </ul>
       </p>
     </div>
+
+    <div class="chromo_popup overlay_info" id="moreinfo-gw170817">
+      <h4 class="info">GW170817</h4>
+      <img src="gw170817_small.png" alt="Image">
+      <p>GW170817 was the first ever detected merger of a binary neutron star, which resulted in a burst of gravitational waves as well as electromagnetic radiation across many wavelengths. The detection was localised to 28 deg<sup>2</sup> by the three gravitational wave detectors, but follow-up observations by optical telescopes narrowed the location down to a galaxy called NGC 4993.</p>
+      <ul><li><b>Date:</b> 17 August 2017 12:41:04 UTC</li>
+      <li><b>Source type:</b> Binary Neutron Star</li>
+      <li><b>Initial neutron star masses:</b> 1.2-1.4 M<sub>&#x02299;</sub> &amp; 1.4-1.6 M<sub>&#x02299;</sub></li>
+      <li><b>Host galaxy</b>: NGC 4993</li>
+      <li><b>Distance:</b> 130 million light years</li>
+      <li><b>Signal-to-noise ratio:</b> 32</li>
+      <li><b>Detectors:</b> <a href="https://ligo.caltech.edu/LA">LIGO Livingston</a> (LA, USA), <a href="https://ligo.caltech.edu/WA">LIGO Hanford</a> (WA, USA), <a href="http://www.virgo-gw.eu/">Virgo</a> (Cascina), Italy)</li>
+      <li><b>Gravitational Wave location resolved to:</b> 28 deg<sup>2</sup></li>
+      </ul>
+      </p>
+    </div>
+
 
   </body>
 </html>
